@@ -42,7 +42,7 @@ form {
   margin: 0 auto;
 }
 
-input {
+input:not(.select) {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -59,8 +59,8 @@ label {
   display: block;
   margin-bottom: 13px;
   margin-top: 20px;
-  color: white;
-  font-size: 14px;
+  color: rgb(106, 66, 214);
+  font-size: 20px;
   font-weight: 200;
 }
 button[type="submit"],

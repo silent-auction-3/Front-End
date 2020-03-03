@@ -8,6 +8,7 @@ const ImageS = styled.img`
 const CardDiv = styled.div`
 border:1px solid black;
 padding:20px;
+margin-top:50px;
 `;
 
 const ItemCard = ({item}) => {

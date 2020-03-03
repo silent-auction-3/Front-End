@@ -7,14 +7,13 @@ const ListDiv = styled.div`
 margin: auto;
   width: 50%;
   padding: 10px;
-
 `;
 const AuctionList = props => {
   const [items, setItems] = useState([])
   useEffect(() => {
     const getItems = () => {
       axios
-        .get('http://localhost:5000/api/Items')
+        .get('http://localhost:5000/api/items')
         .then(response => {
             const itemList = response.data.filter(item =>
             item.name.toLowerCase().includes(props.query.toLowerCase())
@@ -37,7 +36,9 @@ const AuctionList = props => {
         //   {console.log(movie.id)}
         // <MovieCard key={movie.id} movie={movie} />
         // </Link>
+        <Link to={`/items/${item.id}`} style={{ textDecoration: 'none' , color:`black`}} >
         <ItemCard key={item.id} item={item} />
+        </Link>
       ))}
     </ListDiv>
   );

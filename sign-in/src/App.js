@@ -7,6 +7,7 @@ import SignUp from "./components/SignUp";
 import AuctionList from "./components/AuctionList";
 import SearchForm from "./components/SearchForm";
 import StartAuction from "./components/StartAuction";
+import Item from "./components/Item";
 function App() {
   const [searchQuery,setSearchQuery] = useState("");
   const grabQueryToSearch = query => {
@@ -46,6 +47,9 @@ function App() {
           </Route>
           <Route path="/start">
           <StartAuction/>
+          </Route>
+          <Route path="/items/:id">
+          <Item/>
           </Route>
         </Switch>
         </div>

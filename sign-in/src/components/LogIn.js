@@ -8,7 +8,7 @@ export default function LogIn() {
     console.log(errors);
   return (
     <div >
-      <h2>Log In PAGE</h2>
+      <h2>Log In</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
        <label>Username</label>   
       <input type="text" placeholder="Username" name="Username" ref={register({required: true, maxLength: 80})} />

@@ -62,8 +62,6 @@ const UserPage = props => {
   return (
     <ListDiv className="auction-list">
         <h2>UserPage</h2>
-
-        <NavLink to="/user/auctions" style={{color:"orange"}}>View Auctions</NavLink>
         <Link to="/user/start">Start an Auction</Link>
         <ColumnDiv>
         <AuctionListDiv>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import styled from "styled-components"
+import styled from "styled-components";
 const SearchTitle = styled.h4`
-
 `;
 export default function SearchForm(props) {
   const [query, setQuery] = useState("");

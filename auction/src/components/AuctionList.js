@@ -3,11 +3,14 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
 import styled from "styled-components";
-
 const ListDiv = styled.div`
 margin: auto;
-  width: 50%;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-around;
   padding: 10px;
+  
 `;
 const AuctionList = props => {
   const [items, setItems] = useState([])

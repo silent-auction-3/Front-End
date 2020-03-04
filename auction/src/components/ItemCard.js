@@ -9,6 +9,8 @@ const CardDiv = styled.div`
 border:1px solid black;
 padding:20px;
 margin-top:50px;
+width:400px;
+height:500px;
 `;
 
 const ItemCard = ({item}) => {

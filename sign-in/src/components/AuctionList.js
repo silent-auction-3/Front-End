@@ -40,7 +40,7 @@ const AuctionList = props => {
         //   {console.log(movie.id)}
         // <MovieCard key={movie.id} movie={movie} />
         // </Link>
-        <Link to={`/items/${item.id}`} style={{ textDecoration: 'none' , color:`black`}} >
+        <Link to={`/user/items/${item.id}`} style={{ textDecoration: 'none' , color:`black`}} >
         <ItemCard key={item.id} item={item} />
         </Link>
       ))}

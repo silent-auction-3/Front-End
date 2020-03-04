@@ -8,6 +8,7 @@ import AuctionList from "./components/AuctionList";
 import SearchForm from "./components/SearchForm";
 import StartAuction from "./components/StartAuction";
 import Item from "./components/Item";
+import UserPage from "./components/UserPage";
 function App() {
   const [searchQuery,setSearchQuery] = useState("");
   const grabQueryToSearch = query => {
@@ -18,6 +19,7 @@ function App() {
       <Router>
         <div className="App">
           <h1>Silent Auction</h1>
+          
         </div>
         <div>
         <nav className="main-nav">
@@ -29,10 +31,7 @@ function App() {
               <Link to="/signup">Sign Up</Link>
             </li>
             <li>
-              <Link to="/auctions">View Auctions</Link>
-            </li>
-            <li>
-              <Link to="/start">Start an Auction</Link>
+              <Link to="/user/auctions">View Auctions</Link>
             </li>
           </ul>
         </nav>
@@ -41,15 +40,19 @@ function App() {
           <Route path="/signup">
           <SignUp/>
           </Route>
-          <Route path="/auctions">
-            <SearchForm grabQueryToSearch={grabQueryToSearch} />
+          <Route path="/user/auctions">
+          <Link to="/user/profile">View Profile</Link>
+          <SearchForm grabQueryToSearch={grabQueryToSearch} />
           <AuctionList query={searchQuery} setQuery={setSearchQuery} />
           </Route>
-          <Route path="/start">
+          <Route path="/user/start">
           <StartAuction/>
           </Route>
-          <Route path="/items/:id">
+          <Route path="/user/items/:id">
           <Item/>
+          </Route>
+          <Route path="/user/profile">
+          <UserPage />
           </Route>
         </Switch>
         </div>

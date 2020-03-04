@@ -7,7 +7,7 @@ import axios from "axios";
     // const onSubmit = data => console.log(data);
     // console.log(errors);
 
-    class SignUpForm extends Component {
+    class SignUp extends Component {
       constructor() {
         super();
 
@@ -40,16 +40,16 @@ import axios from "axios";
         console.log("The form was submitted with the following data:");
         console.log(this.state);
         axios
-          .post("https://app-replate2.herokuapp.com/api/auth/register", this.state)
+          .post("https://silent-auction-backend.herokuapp.com/api/auth/register", this.state)
           .then(res => {
             console.log(res);
             this.props.history.push('/sign-in');
           })
           .catch(err => console.log(err));
       }
-    }       
+    }  
 
-  return (
+return (
     <div>
       <h2>Sign Up</h2>
       <form onSubmit={this.handleSubmit}>

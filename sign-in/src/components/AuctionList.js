@@ -13,17 +13,16 @@ margin: auto;
   
 `;
 const AuctionList = props => {
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState([]);
   useEffect(() => {
     const getItems = () => {
       axios
-        .get('http://localhost:5000/api/items')
+        .get('https://silent-auction-backend.herokuapp.com/api/public/auctions')
         .then(response => {
             const itemList = response.data.filter(item =>
-            item.name.toLowerCase().includes(props.query.toLowerCase())
+            item.title.toLowerCase().includes(props.query.toLowerCase())
           );
           setItems(itemList);
-          console.log(response.data);
         })
         .catch(error => {
           console.error('Server Error', error);

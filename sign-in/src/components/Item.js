@@ -28,14 +28,15 @@ display:flex;
 `;
 const Item = (props) => {
   const [item, setItem] = useState('');
+  const [bids, setBids] = useState([]);
   const id = useParams();
   console.log(props);
   useEffect(() => {
        axios
-        .get(`http://localhost:5000/api/items/${id.id}`)
+        .get(`https://silent-auction-backend.herokuapp.com/api/public/auctions/${id.id}`)
         .then(response => {
           setItem(response.data);
-          console.log(response.data,"Item data");
+          setBids(response.data.bids);
         })
         .catch(error => {
           console.error(error);
@@ -48,9 +49,10 @@ const Item = (props) => {
     <ItemWrapper>
     <BidWrapper className="bid-wrapper">
       <ItemCard key={item.id} item={item} />
+      <p>Description: {item.description}</p>
     </BidWrapper>
     <FormWrapper>
-    <BidForm item={item} />
+    <BidForm item={item} bids={bids} highestBid={highestBid} />
     </FormWrapper>
     </ItemWrapper>
   );

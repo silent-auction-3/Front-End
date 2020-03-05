@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import * as moment from 'moment';
 import styled from "styled-components";
 const ImageS = styled.img`
     width: 100%;
@@ -13,18 +14,15 @@ width:400px;
 height:500px;
 `;
 
-const ItemCard = ({item}) => {
-  const { name, description, image, price } = item;
+const ItemCard = (props) => {
+
   return (
     <CardDiv className="item-card">
-      <h2>{name}</h2>
-      <div className="item-description">
-      {description}
-      </div>
+      <h2>{props.item.title}</h2>
       <div className="item-image">
-        <ImageS src={image} />
+        <ImageS src={props.item.image_url} />
       </div>
-      <h3>Current Price:${price} </h3>
+      <p>{props.item.start_date}</p>
     </CardDiv>
   )
 };

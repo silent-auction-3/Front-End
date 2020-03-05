@@ -15,7 +15,9 @@ margin: auto;
 
 `
 const AuctionListDiv = styled.div`
-
+border:1px solid black;
+width:30%;
+text-align:center;
 `
 const BidListDiv = styled.div`
 border:1px solid black;
@@ -61,11 +63,11 @@ const UserPage = props => {
   
   return (
     <ListDiv className="auction-list">
-        <h2>UserPage</h2>
+        <h3>UserPage</h3>
         <Link to="/user/start">Start an Auction</Link>
         <ColumnDiv>
         <AuctionListDiv>
-        <h4>My Auctions</h4>
+        <h3>My Auctions</h3>
         {items.map(item => (
         <Link to={`./items/${item.id}`} style={{ textDecoration: 'none' , color:`black`}} >
         <ItemCard key={item.id} item={item} />

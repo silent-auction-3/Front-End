@@ -30,13 +30,9 @@ const renderer = ({ days,hours, minutes, seconds, completed }) => {
   }
 };
 const ItemCard = (props) => {
-  console.log(props.item.start_date);
-  console.log(props.item.num_days);
-  const [timer,setTimer] = useState();
   const NewDate = () => {
     var bing = props.item.start_date
     var lest = moment(bing).add(props.item.num_days, 'days').format("YYYY-MM-DDTHH:mm:ss.SSSSZ");
-    console.log(`${lest}`);
     return lest.toString();
   };
   return (

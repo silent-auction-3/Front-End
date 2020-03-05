@@ -13,7 +13,6 @@ margin-top:50px;
 width:400px;
 height:500px;
 `;
-
 const ItemCard = (props) => {
 
   return (

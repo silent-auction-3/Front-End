@@ -4,32 +4,36 @@ import ItemCard from "./ItemCard";
 import { useParams } from 'react-router-dom';
 import styled from "styled-components";
 import BidForm from "./BidForm";
-const BidButton = styled.button`
-border:1px solid black;
-padding:20px;
-margin-left:auto;
-margin-right:auto;
-display:flex;
-margin-top:20px;
-`;
+
 const BidWrapper = styled.div`
 width:50%;
 margin-left:15%;
+display:flex;
+flex-direction:column;
 
 `;
 const FormWrapper = styled.div`
 width:300px;
-
-
+margin-top:50px;
+color:#dddddd;
+padding-left:10px;
+padding-right:10px;
+background-color:rgba(15, 26, 36, 0.582);
+text-align:center;
 `;
 const ItemWrapper = styled.div`
 display:flex;
 
 `;
+const DescriptionWrap = styled.p`
+width:400px;
+margin-left:10px;
+color:#dddddd;
+`;
 const Item = (props) => {
   const [item, setItem] = useState('');
   const [bids, setBids] = useState([]);
-  const [highestBid,setHighestBid] = useState('0');
+  const [highestBid,setHighestBid] = useState(0);
   const id = useParams();
   console.log(props);
   useEffect(() => {
@@ -38,8 +42,8 @@ const Item = (props) => {
         .then(response => {
           setItem(response.data);
           setBids(response.data.bids);
-          const bidList = response.data.bids.map(bid => bid.bid_amount);
-          setHighestBid(Math.max(parseInt(bidList)))
+          const bidList = response.data.bids.map(bid => parseInt(bid.bid_amount));
+          setHighestBid(Math.max.apply(Math,bidList));
         })
         .catch(error => {
           console.error(error);
@@ -52,7 +56,7 @@ const Item = (props) => {
     <ItemWrapper>
     <BidWrapper className="bid-wrapper">
       <ItemCard key={item.id} item={item} />
-      <p>Description: {item.description}</p>
+      <DescriptionWrap>Description: {item.description}</DescriptionWrap>
     </BidWrapper>
     <FormWrapper>
     <BidForm item={item} bids={bids} highestBid={highestBid} />

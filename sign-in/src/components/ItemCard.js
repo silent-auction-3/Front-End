@@ -8,13 +8,12 @@ const ImageS = styled.img`
   object-fit: cover;
 `;
 const CardDiv = styled.div`
-border:1px solid black;
 border-radius:20px;
 padding:20px;
 margin-top:50px;
 width:400px;
 height:500px;
-background-color:#0F1A24;
+background-color:rgba(15, 26, 36, 0.4);
 color:#eeebb0;
 `;
 const TimeSpan = styled.span`
@@ -27,9 +26,12 @@ text-align:center;
 font-size:20px;
 `;
 const TimeDiv = styled.div`
+margin-top:10px;
 display:flex;
 justify-content:center;
 flex-direction:column;
+
+background-color:rgba(94, 49, 23, 0.6);
 `;
 const AuctionOver = () => <span>The Auction has ended!</span>;
 

@@ -18,7 +18,7 @@ const AuctionList = props => {
   useEffect(() => {
     const getItems = () => {
       axios
-        .get('https://silent-auction-backend.herokuapp.com/api/user/auctions')
+        .get('https://silent-auction-backend.herokuapp.com/api/categories')
         .then(response => {
             const itemList = response.data.filter(item =>
             item.title.toLowerCase().includes(props.query.toLowerCase())

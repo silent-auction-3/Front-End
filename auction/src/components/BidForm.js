@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from 'react-hook-form';
+
 export default function LogIn(props) {
     const { register, handleSubmit, errors } = useForm();
 
@@ -7,6 +8,7 @@ export default function LogIn(props) {
         console.log(data);
     }
     console.log(errors);
+
   return (
     <div >
       <h4>Info</h4>
@@ -22,10 +24,15 @@ export default function LogIn(props) {
         </div>
       ))}
     </div>
+    
       <form onSubmit={handleSubmit(onSubmit)}>
        <label>Place a bid</label>   
-       <input type="number" placeholder="Enter an amount" name="BidAmount" ref={register({required: "Amount Required",min: (props.highestBid + 1)})} />
+       <input type="number" 
+              placeholder="Enter an amount" 
+              name="BidAmount" 
+              ref={register({required: "Amount Required",min: (props.highestBid + 1)})} />
        {errors.BidAmount && <p style={{color:"red"}}>*Amount should be higher than ${props.highestBid} </p>}
+
       <input type="submit" />
     </form>
     </div>

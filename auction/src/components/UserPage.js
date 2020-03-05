@@ -36,7 +36,7 @@ const UserPage = props => {
   useEffect(() => {
     const getItems = () => {
       axios
-        .get('http://localhost:5000/api/items')
+        .get('https://silent-auction-backend.herokuapp.com/api/auctions')
         .then(response => {
           setItems(response.data);
           console.log(response.data);
@@ -47,7 +47,7 @@ const UserPage = props => {
     }
     const getBids = () => {
         axios
-          .get('http://localhost:5000/api/bidlist')
+          .get('https://silent-auction-backend.herokuapp.com/api/bids')
           .then(response => {
             setBids(response.data);
             console.log(response.data);

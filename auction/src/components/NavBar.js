@@ -7,7 +7,7 @@ const NavBar = (props) => {
     <section id="navgroup">
     <nav>
       <a class="safeLogo" href="/user/auctions">
-        <img class="logoimg" src={require("../img/Picture1.png")} alt="Ride For Life logo"/>
+        <img class="logoimg" src={require("../img/Picture1.png")} alt="Silent Auction"/>
       </a>
       <div class="links">
     <Link to="/user/auctions">Auctions</Link>

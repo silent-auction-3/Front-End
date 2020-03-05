@@ -42,7 +42,7 @@ form {
   margin: 0 auto;
 }
 
-textarea, input:not(.select) {
+textarea,select, input:not(.select) {
   display: block;
   box-sizing: border-box;
   width: 100%;

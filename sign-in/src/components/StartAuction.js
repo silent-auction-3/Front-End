@@ -18,9 +18,16 @@ export default function StartAuction() {
       <input type="number" placeholder="Price" name="Price" ref={register({required: "Price is required", min: {value:1,message:"Price should be above $1"}, maxLength: 12})} />
       {errors.Price && <p style={{color:"red"}}>*{errors.Price.message}</p>}
       <label>Image URL</label>   
-      <input type="url" placeholder="Image" name="Image" ref={register({required: "Image is required", pattern: /^\S+@\S+$/i})} />
+      <input type="url" placeholder="Image" name="Image" ref={register({required: "Image is required"})} />
       {errors.Image && <p style={{color:"red"}}>*{errors.Image.message}</p>}
-
+      <label>Length of Auction</label>   
+      <select name="auctionLength" ref={register({ required: "This is required" })}>
+        <option value="3">3 days</option>
+        <option value="5">5 days</option>
+        <option value="7">7 days</option>
+        <option value="10">10 days</option>
+      </select>
+      {errors.auctionLength && <p style={{color:"red"}}>*{errors.auctionLength.message}</p>}
       <input type="submit" />
     </form>
     </div>

@@ -29,6 +29,7 @@ display:flex;
 const Item = (props) => {
   const [item, setItem] = useState('');
   const [bids, setBids] = useState([]);
+  const [highestBid,setHighestBid] = useState('0');
   const id = useParams();
   console.log(props);
   useEffect(() => {
@@ -37,6 +38,8 @@ const Item = (props) => {
         .then(response => {
           setItem(response.data);
           setBids(response.data.bids);
+          const bidList = response.data.bids.map(bid => bid.bid_amount);
+          setHighestBid(Math.max(parseInt(bidList)))
         })
         .catch(error => {
           console.error(error);

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
 import styled from "styled-components";
+
 const ListDiv = styled.div`
 margin: auto;
   display:flex;
@@ -13,17 +14,16 @@ margin: auto;
   
 `;
 const AuctionList = props => {
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState([]);
   useEffect(() => {
     const getItems = () => {
       axios
-        .get('http://localhost:5000/api/items')
+        .get('https://silent-auction-backend.herokuapp.com/api/user/auctions')
         .then(response => {
             const itemList = response.data.filter(item =>
-            item.name.toLowerCase().includes(props.query.toLowerCase())
+            item.title.toLowerCase().includes(props.query.toLowerCase())
           );
           setItems(itemList);
-          console.log(response.data);
         })
         .catch(error => {
           console.error('Server Error', error);
@@ -40,7 +40,7 @@ const AuctionList = props => {
         //   {console.log(movie.id)}
         // <MovieCard key={movie.id} movie={movie} />
         // </Link>
-        <Link to={`/items/${item.id}`} style={{ textDecoration: 'none' , color:`black`}} >
+        <Link to={`/user/items/${item.id}`} style={{ textDecoration: 'none' , color:`black`}} >
         <ItemCard key={item.id} item={item} />
         </Link>
       ))}

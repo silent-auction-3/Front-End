@@ -8,13 +8,15 @@ export default function LogIn(props) {
     }
     console.log(errors);
     console.log(props);
+    const date = String(props.item.start_date);
+    const newdate = date.slice(0,10)
   return (
     <div >
       <h4>Info</h4>
       <p>Seller: {props.item.seller_name}</p>
       <p>Category: {props.item.category_name}</p>
       <p>Starting Price: ${props.item.start_price}</p>
-      <p>Auction started: {props.item.start_date}</p>
+      <p>Date started: {newdate}</p>
       <div>
       <h3>Bid History</h3>
   <h4 style={{color:"lightgreen"}}>Highest Bid: ${props.highestBid}</h4>

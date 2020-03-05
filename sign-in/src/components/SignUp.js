@@ -6,6 +6,9 @@ export default function SignUp() {
     console.log(errors);
   return (
     <div >
+      <div class="mainlogo">
+      <img  src={require("../img/Picture1.png")} alt="Ride For Life logo"/>
+      </div>
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
       <label>Email Address</label>

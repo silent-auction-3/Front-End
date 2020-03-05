@@ -67,8 +67,8 @@ function App() {
         <div>
         <Switch>
           <Route exact path="/">
-          <Link to="/signup">Sign Up</Link>
             <LogIn/>    
+            <p>Don't have an account?</p><Link to="/signup">Sign Up!</Link>
             </Route>
           <Route path="/signup">
           <Link to="/">Log In</Link> 

@@ -8,6 +8,9 @@ export default function LogIn() {
     console.log(errors);
   return (
     <div >
+      <div class="mainlogo">
+      <img  src={require("../img/Picture1.png")} alt="Ride For Life logo"/>
+      </div>
       <h2>Log In</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
        <label>Username</label>   

@@ -158,3 +158,19 @@ h2{
   display:flex;
   justify-content: flex-end;
 }
+
+.HeaderStyle{
+  color:#dddddd;
+}
+
+.noAccount{
+  color:orange;
+  display:flex;
+  justify-content: center;
+}
+
+.logLink{
+  font-size: 20px;
+  margin-top: 12px;;
+  margin-left: 10px;
+}

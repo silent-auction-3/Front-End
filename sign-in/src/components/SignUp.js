@@ -9,7 +9,7 @@ export default function SignUp() {
       <div class="mainlogo">
       <img  src={require("../img/Picture1.png")} alt="Ride For Life logo"/>
       </div>
-      <h2>Sign Up</h2>
+      <h2 className="HeaderStyle">Sign Up</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
       <label>Email Address</label>
       <input type="email" placeholder="Email Address" name="EmailAddress" ref={register({required: true})} />

@@ -11,7 +11,7 @@ export default function LogIn() {
       <div class="mainlogo">
       <img  src={require("../img/Picture1.png")} alt="Ride For Life logo"/>
       </div>
-      <h2>Log In</h2>
+      <h2 className="HeaderStyle">Log In</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
        <label>Username</label>   
       <input type="text" placeholder="Username" name="Username" ref={register({required: "Username Required", maxLength: 80})} />

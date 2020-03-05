@@ -7,11 +7,14 @@ export default function LogIn(props) {
         console.log(data);
     }
     console.log(errors);
+    console.log(props);
   return (
     <div >
       <h4>Info</h4>
       <p>Seller: {props.item.seller_name}</p>
+      <p>Category: {props.item.category_name}</p>
       <p>Starting Price: ${props.item.start_price}</p>
+      <p>Auction started: {props.item.start_date}</p>
       <div>
       <h3>Bid History</h3>
   <h4 style={{color:"lightgreen"}}>Highest Bid: ${props.highestBid}</h4>

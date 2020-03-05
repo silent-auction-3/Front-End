@@ -9,10 +9,27 @@ const ImageS = styled.img`
 `;
 const CardDiv = styled.div`
 border:1px solid black;
+border-radius:20px;
 padding:20px;
 margin-top:50px;
 width:400px;
 height:500px;
+background-color:#0F1A24;
+color:#eeebb0;
+`;
+const TimeSpan = styled.span`
+display:flex;
+justify-content:center;
+font-size:50px;
+`;
+const TimeTell = styled.div`
+text-align:center;
+font-size:20px;
+`;
+const TimeDiv = styled.div`
+display:flex;
+justify-content:center;
+flex-direction:column;
 `;
 const AuctionOver = () => <span>The Auction has ended!</span>;
 
@@ -23,9 +40,15 @@ const renderer = ({ days,hours, minutes, seconds, completed }) => {
   } else {
     // Render a countdown
     return (
-      <span>
-        {days}:{hours}:{minutes}:{seconds}
-      </span>
+      <TimeDiv>
+      <TimeTell>
+        Time Left
+        </TimeTell>
+      <TimeSpan>
+        {days}d:{hours}h:{minutes}m:{seconds}s
+      </TimeSpan>
+
+      </TimeDiv>
     );
   }
 };

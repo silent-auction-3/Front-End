@@ -15,7 +15,7 @@ function SignUp(props) {
     axios.post('https://silent-auction-backend.herokuapp.com/api/auth/register', value)
     .then(response => {
       console.log(response);
-      // windows.localStorage.setItem('token', response.data.token)
+//       windows.localStorage.setItem('token', response.data.token)
       history.push('/')
     })
     .catch(err => console.log(err));
@@ -25,12 +25,12 @@ function SignUp(props) {
     <div >
       <h2>Sign Up</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-      {/* <label>Email Address</label>
+      <label>Email Address</label>
       <input type="email" 
              placeholder="Email Address" 
-             name="emailaddress" 
+             name="email" 
              ref={register({required: true})} />
-      {errors.EmailAddress && <p style={{color:"red"}}>*This is a required field</p>} */}
+      {errors.EmailAddress && <p style={{color:"red"}}>*This is a required field</p>}
 
       <label>Username</label>
       <input type="text" 
@@ -46,10 +46,10 @@ function SignUp(props) {
              ref={register({required: "Password Required", maxLength: {value:64,message:"Password is too long"}})} />
       {errors.Password && <p style={{color:"red"}}>*{errors.Password.message}</p>}
 
-      {/* <label>Name</label>
+      <label>Name</label>
       <input type="text" 
              placeholder="Name" 
-             name="name" 
+             name="full_name" 
              ref={register({required: true})} />
       {errors.Name && <p style={{color:"red"}}>*This is a required field</p>}
 
@@ -63,8 +63,8 @@ function SignUp(props) {
       <label>Phone Number</label>
       <input type="text" 
              placeholder="Phone Number" 
-             name="phonenumber" 
-             ref={register} /> */}
+             name="phone_number" 
+             ref={register} />
 
       <input type="submit" />
     </form>

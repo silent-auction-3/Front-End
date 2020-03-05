@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Countdown from "react-countdown-now";
 import styled from "styled-components";
+import * as moment from "moment";
+
 const ImageS = styled.img`
     width: 100%;
   height: 300px;
@@ -12,19 +15,34 @@ margin-top:50px;
 width:400px;
 height:500px;
 `;
+const AuctionOver = () => <span>The Auction has ended!</span>;
 
-const ItemCard = ({item}) => {
-  const { name, description, image, price } = item;
+const renderer = ({ days,hours, minutes, seconds, completed }) => {
+  if (completed) {
+    // Render a complete state
+    return <AuctionOver />;
+  } else {
+    // Render a countdown
+    return (
+      <span>
+        {days}:{hours}:{minutes}:{seconds}
+      </span>
+    );
+  }
+};
+const ItemCard = (props) => {
+  const NewDate = () => {
+    var bing = props.item.start_date
+    var lest = moment(bing).add(props.item.num_days, 'days').format("YYYY-MM-DDTHH:mm:ss.SSSSZ");
+    return lest.toString();
+  };
   return (
     <CardDiv className="item-card">
-      <h2>{name}</h2>
-      <div className="item-description">
-      {description}
-      </div>
+      <h2>{props.item.title}</h2>
       <div className="item-image">
-        <ImageS src={image} />
+        <ImageS src={props.item.image_url} />
       </div>
-      <h3>Current Price:${price} </h3>
+      <Countdown date={NewDate()} renderer={renderer} />
     </CardDiv>
   )
 };

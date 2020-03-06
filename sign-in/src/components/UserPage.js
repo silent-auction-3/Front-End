@@ -63,7 +63,7 @@ const UserPage = props => {
   
   return (
     <ListDiv className="auction-list">
-        <h3>UserPage</h3>
+        <h3 className="HeaderStyle">UserPage</h3>
         <Link to="/user/start">Start an Auction</Link>
         <ColumnDiv>
         <AuctionListDiv>

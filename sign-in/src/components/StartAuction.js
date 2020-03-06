@@ -5,8 +5,8 @@ export default function StartAuction() {
     const onSubmit = data => console.log(data);
     console.log(errors);
   return (
-    <div >
-      <h2>Start an Auction</h2>
+    <div className="logBox">
+      <h2 className="HeaderStyle">Start an Auction</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
       <label>Item</label>   
       <input type="text" placeholder="Item name" name="ItemName" ref={register({required: "Name is required", maxLength: 80})} />

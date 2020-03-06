@@ -30,7 +30,7 @@ margin-top:10px;
 display:flex;
 justify-content:center;
 flex-direction:column;
-
+border:1px solid orange;
 background-color:rgba(94, 49, 23, 0.6);
 `;
 const AuctionOver = () => <span>The Auction has ended!</span>;

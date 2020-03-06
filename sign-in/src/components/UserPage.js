@@ -63,8 +63,12 @@ const UserPage = props => {
   
   return (
     <ListDiv className="auction-list">
+        <div className="userPage">
         <h3 className="HeaderStyle">UserPage</h3>
+        <button className="startAuction">
         <Link to="/user/start">Start an Auction</Link>
+        </button>
+        </div>
         <ColumnDiv>
         <AuctionListDiv>
         <h3>My Auctions</h3>

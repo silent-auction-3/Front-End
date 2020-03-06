@@ -18,13 +18,16 @@ function LogIn(props) {
     .then(response => {
       console.log(response);
       window.localStorage.setItem('token', response.data.token)
-      history.push('/auction/UserPage')
+      history.push('/UserPage')
     })
     .catch(err => console.log(err));
   }
 
   return (
     <div >
+      <div class="mainlogo">
+      <img  src={require("../img/Picture1.png")} alt="Ride For Life logo"/>
+      </div>
       <h2>Log In</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
        <label>Username</label>   

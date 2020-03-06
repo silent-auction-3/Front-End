@@ -2,18 +2,36 @@ import React, { useState } from 'react';
 import Countdown from "react-countdown-now";
 import styled from "styled-components";
 import * as moment from "moment";
-
 const ImageS = styled.img`
     width: 100%;
   height: 300px;
   object-fit: cover;
 `;
 const CardDiv = styled.div`
-border:1px solid black;
+border-radius:20px;
 padding:20px;
 margin-top:50px;
 width:400px;
 height:500px;
+background-color:rgba(15, 26, 36, 0.4);
+color:#eeebb0;
+`;
+const TimeSpan = styled.span`
+display:flex;
+justify-content:center;
+font-size:50px;
+`;
+const TimeTell = styled.div`
+text-align:center;
+font-size:20px;
+`;
+const TimeDiv = styled.div`
+margin-top:10px;
+display:flex;
+justify-content:center;
+flex-direction:column;
+
+background-color:rgba(94, 49, 23, 0.6);
 `;
 const AuctionOver = () => <span>The Auction has ended!</span>;
 
@@ -24,9 +42,15 @@ const renderer = ({ days,hours, minutes, seconds, completed }) => {
   } else {
     // Render a countdown
     return (
-      <span>
-        {days}:{hours}:{minutes}:{seconds}
-      </span>
+      <TimeDiv>
+      <TimeTell>
+        Time Left
+        </TimeTell>
+      <TimeSpan>
+        {days}d:{hours}h:{minutes}m:{seconds}s
+      </TimeSpan>
+
+      </TimeDiv>
     );
   }
 };

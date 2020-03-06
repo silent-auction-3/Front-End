@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, NavLink } from "react-router-dom";
+// import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
 import styled from "styled-components";
 const ListDiv = styled.div`
@@ -12,7 +13,6 @@ margin: auto;
   flex-direction:row;
   justify-content:space-around;
   padding: 10px;
-
 `
 const AuctionListDiv = styled.div`
 border:1px solid black;

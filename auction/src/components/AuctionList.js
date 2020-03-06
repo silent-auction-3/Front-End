@@ -36,10 +36,6 @@ const AuctionList = props => {
   return (
     <ListDiv className="auction-list">
       {items.map(item => (
-        // <Link to={`/movies/${movie.id}`} style={{ textDecoration: 'none' , color:`black`}} >
-        //   {console.log(movie.id)}
-        // <MovieCard key={movie.id} movie={movie} />
-        // </Link>
         <Link to={`/user/items/${item.id}`} style={{ textDecoration: 'none' , color:`black`}} >
         <ItemCard key={item.id} item={item} />
         </Link>

@@ -11,7 +11,6 @@ import Item from "./components/Item";
 import UserPage from "./components/UserPage";
 import NavBar from "./components/NavBar";
 import Particles from 'react-particles-js';
-
 function App() {
   const [searchQuery,setSearchQuery] = useState("");
   const grabQueryToSearch = query => {
@@ -68,8 +67,8 @@ function App() {
         <div>
         <Switch>
           <Route exact path="/">
-          <Link to="/signup">Sign Up</Link>
             <LogIn/>    
+            <p>Don't have an account?</p><Link to="/signup">Sign Up!</Link>
             </Route>
           <Route path="/signup">
           <Link to="/">Log In</Link> 

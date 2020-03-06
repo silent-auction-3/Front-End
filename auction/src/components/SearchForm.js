@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 const SearchTitle = styled.h4`
-
-
+font-size:20px;
+text-align:center;
+color:#dddddd;
+`;
+const SearchButton = styled.button`
+padding:5px 10px 5px 10px;
+border-radius:5px;
 `;
 export default function SearchForm(props) {
   const [query, setQuery] = useState("");
@@ -28,7 +33,9 @@ export default function SearchForm(props) {
           autoComplete="off"
           value={query}
         />
-       <button > Search! </button>
+        <div className="searchbutton">
+       <SearchButton> Search! </SearchButton>
+       </div>
       </form>
     </section>
   );

@@ -24,10 +24,11 @@ function SignUp(props) {
   return (
     <div>
       <div class="mainlogo">
-      <img  src={require("../img/Picture1.png")} alt="Ride For Life logo"/>
+      <img  src={require("../img/Picture1.png")} alt="Silent Auction"/>
       </div>
 
-      <h2>Sign Up</h2>
+      <div className="logBox">
+      <h2 className="HeaderStyle">Sign Up</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
       <label>Email Address</label>
       <input type="email" 
@@ -72,6 +73,7 @@ function SignUp(props) {
 
       <input type="submit" />
     </form>
+    </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Countdown from "react-countdown-now";
 import styled from "styled-components";
 import * as moment from "moment";
@@ -35,8 +35,10 @@ margin-top:10px;
 display:flex;
 justify-content:center;
 flex-direction:column;
+border:1px solid orange;
 background-color:rgba(94, 49, 23, 0.6);
 `;
+
 const AuctionOver = () => <span>The Auction has ended!</span>;
 
 const renderer = ({ days,hours, minutes, seconds, completed }) => {
@@ -58,6 +60,7 @@ const renderer = ({ days,hours, minutes, seconds, completed }) => {
     );
   }
 };
+
 const ItemCard = (props) => {
   const NewDate = () => {
     var bing = props.item.start_date
@@ -68,7 +71,6 @@ const ItemCard = (props) => {
     <CardDiv className="item-card">
       <h2>{props.item.title}</h2>
       <h2>{props.item.id}</h2>
-
       <div className="item-image">
         <ImageS src={props.item.image_url} />
       </div>

@@ -26,7 +26,7 @@ function LogIn(props) {
       <h2 className="HeaderStyle">Log In</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
        <label>Username</label>   
-       
+
       <input type="text" 
              placeholder="Username" 
              name="username" 

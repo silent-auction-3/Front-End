@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
 import styled from "styled-components";
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import Delete from "./Delete";
 
 const ListDiv = styled.div`
 `;

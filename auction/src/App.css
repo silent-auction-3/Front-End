@@ -110,6 +110,7 @@ h2{
 }
 #navgroup .links {
   display: flex;
+  margin-top: 10px;
 }
 #navgroup .links .signup {
   color: #3b3b3b;
@@ -157,4 +158,44 @@ h2{
 .searchbutton{
   display:flex;
   justify-content: flex-end;
+}
+
+.HeaderStyle{
+  color:#dddddd;
+}
+
+.noAccount{
+  color:orange;
+  display:flex;
+  justify-content: center;
+}
+
+.logLink{
+  font-size: 20px;
+  margin-top: 12px;;
+  margin-left: 10px;
+}
+
+.logBox{
+  background-color: rgba(15, 26, 36, 0.644);
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 20px 15px 20px;
+  border-radius: 10px;
+}
+
+.userPage{
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+}
+
+.startAuction{
+  padding:5px 10px 5px 10px;
+  border-radius:5px;
+  font-size: large;
+  background-color:rgba(247, 242, 199, 0.562);
 }

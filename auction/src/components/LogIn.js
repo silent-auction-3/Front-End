@@ -18,7 +18,7 @@ function LogIn(props) {
     .then(response => {
       console.log(response);
       window.localStorage.setItem('token', response.data.token)
-      history.push('/UserPage')
+      history.push('/user/profile')
     })
     .catch(err => console.log(err));
   }

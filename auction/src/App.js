@@ -11,6 +11,7 @@ import Item from "./components/Item";
 import UserPage from "./components/UserPage";
 import NavBar from "./components/NavBar";
 import Particles from 'react-particles-js';
+
 function App() {
   const [searchQuery,setSearchQuery] = useState("");
   const grabQueryToSearch = query => {

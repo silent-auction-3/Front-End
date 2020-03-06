@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
 import styled from "styled-components";
+import { axiosWithAuth } from "../utils/axiosWithAuth"
 
 const ListDiv = styled.div`
 margin: auto;
@@ -17,16 +18,17 @@ const AuctionList = props => {
   const [items, setItems] = useState([]);
   useEffect(() => {
     const getItems = () => {
-      axios
-        .get('https://silent-auction-backend.herokuapp.com/api/categories')
+      axiosWithAuth()
+        .get('https://silent-auction-backend.herokuapp.com/api/users/auctions/')
         .then(response => {
+          console.log("userauctions", response.data)
             const itemList = response.data.filter(item =>
             item.title.toLowerCase().includes(props.query.toLowerCase())
           );
           setItems(itemList);
         })
         .catch(error => {
-          console.error('Server Error', error);
+          console.error('Server Error', error.errorMessage);
         });
     }
     

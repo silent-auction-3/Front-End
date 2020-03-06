@@ -9,6 +9,7 @@ export default function SignUp() {
       <div class="mainlogo">
       <img  src={require("../img/Picture1.png")} alt="Ride For Life logo"/>
       </div>
+      <div className="logBox">
       <h2 className="HeaderStyle">Sign Up</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
       <label>Email Address</label>
@@ -36,6 +37,7 @@ export default function SignUp() {
 
       <input type="submit" />
     </form>
+    </div>
     </div>
   );
 }

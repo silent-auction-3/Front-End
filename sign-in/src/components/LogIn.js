@@ -11,6 +11,7 @@ export default function LogIn() {
       <div class="mainlogo">
       <img  src={require("../img/Picture1.png")} alt="Ride For Life logo"/>
       </div>
+      <div className="logBox">
       <h2 className="HeaderStyle">Log In</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
        <label>Username</label>   
@@ -21,6 +22,7 @@ export default function LogIn() {
        {errors.Password && <p style={{color:"red"}}>*{errors.Password.message}</p>}
       <input type="submit" />
     </form>
+    </div>
     </div>
 
   );

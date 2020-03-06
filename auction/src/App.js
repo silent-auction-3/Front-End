@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom";
 import LogIn from "./components/LogIn";
 import SignUp from "./components/SignUp";
 import AuctionList from "./components/AuctionList";
@@ -11,7 +10,6 @@ import Item from "./components/Item";
 import UserPage from "./components/UserPage";
 import NavBar from "./components/NavBar";
 import Particles from 'react-particles-js';
-
 function App() {
   const [searchQuery,setSearchQuery] = useState("");
   const grabQueryToSearch = query => {
@@ -69,11 +67,15 @@ function App() {
         <Switch>
           <Route exact path="/">
             <LogIn/>    
-            <p>Don't have an account?</p><Link to="/signup">Sign Up!</Link>
+            <div className="noAccount">
+            <p>Don't have an account?</p><NavLink className="logLink" to="/signup">Sign Up!</NavLink>
+            </div>
             </Route>
           <Route path="/signup">
-          <Link to="/">Log In</Link> 
           <SignUp/>
+          <div className="noAccount">
+          <p>Already signed up?</p><NavLink className="logLink"  to="/">Log In</NavLink> 
+          </div>
           </Route>
           <Route path="/user/auctions">
           <NavBar/>

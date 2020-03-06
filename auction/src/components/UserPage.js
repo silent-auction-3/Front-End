@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 // import { Link, NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
 import styled from "styled-components";
 import { axiosWithAuth } from '../utils/axiosWithAuth';
-const ListDiv = styled.div`
 
+const ListDiv = styled.div`
 `;
 const HeaderDiv = styled.div`
 margin: auto;
@@ -31,6 +31,7 @@ const ColumnDiv = styled.div`
 display:flex;
 justify-content:space-around;
 `
+
 const UserPage = props => {
   const [items, setItems] = useState([]);
   const [bids, setBids] = useState([])
@@ -69,8 +70,12 @@ const UserPage = props => {
 
   return (
     <ListDiv className="auction-list">
-        <h3>UserPage</h3>
+        <div className="userPage">
+        <h3 className="HeaderStyle">UserPage</h3>
+        <button className="startAuction">
         <Link to="/user/start">Start an Auction</Link>
+        </button>
+        </div>
         <ColumnDiv>
         <AuctionListDiv>
         <h3>My Auctions</h3>
@@ -84,7 +89,8 @@ const UserPage = props => {
       <h3>My Bids</h3>
       {bids.map(bid => (
         <Link to={`./items/${bid.id}`} style={{ textDecoration: 'none' , color:`black`}} >
-      <p>${bid.bid_amount}</p>
+        <h4>{bid.name}</h4>
+      <p>${bid.bidAmount}</p>
         </Link>
       ))}
       </BidListDiv>

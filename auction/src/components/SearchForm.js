@@ -5,10 +5,12 @@ font-size:20px;
 text-align:center;
 color:#dddddd;
 `;
+
 const SearchButton = styled.button`
 padding:5px 10px 5px 10px;
 border-radius:5px;
 `;
+
 export default function SearchForm(props) {
   const [query, setQuery] = useState("");
   const handleChanges = e => {
@@ -19,6 +21,7 @@ export default function SearchForm(props) {
    props.grabQueryToSearch(query);
    setQuery("")
   }
+  
   return (
     <section className="search-form" style={{display:"flex",justifyContent:"center"}}>  
      <form className="search"  onSubmit={(event)=>{sendQuery(event)}}>

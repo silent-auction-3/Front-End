@@ -10,6 +10,7 @@ width:50%;
 margin-left:15%;
 display:flex;
 flex-direction:column;
+
 `;
 const FormWrapper = styled.div`
 width:300px;
@@ -22,6 +23,7 @@ text-align:center;
 `;
 const ItemWrapper = styled.div`
 display:flex;
+
 `;
 const DescriptionWrap = styled.p`
 width:400px;

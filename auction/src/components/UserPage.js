@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import ItemCard from "./ItemCard";
 import styled from "styled-components";
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 const ListDiv = styled.div`
 
 `;
@@ -35,22 +36,23 @@ const UserPage = props => {
   const [bids, setBids] = useState([])
   useEffect(() => {
     const getItems = () => {
-      axios
-        .get('https://silent-auction-backend.herokuapp.com/api/auctions')
+      axiosWithAuth()
+        .get('https://silent-auction-backend.herokuapp.com/api/users/auctions')
         .then(response => {
           setItems(response.data);
-          console.log(response.data);
+          console.log("usersauctions", response.data);
         })
         .catch(error => {
           console.error('Server Error', error);
         });
     }
     const getBids = () => {
-        axios
-          .get('https://silent-auction-backend.herokuapp.com/api/bids')
+        axiosWithAuth()
+          .get('https://silent-auction-backend.herokuapp.com/api/users/bids')
           .then(response => {
-            setBids(response.data);
-            console.log(response.data);
+            const updatedBids = attachAuctionsToBids(response.data)
+            setBids(updatedBids);
+            console.log("userbids", response.data);
           })
           .catch(error => {
             console.error('Server Error', error);
@@ -60,7 +62,11 @@ const UserPage = props => {
     getItems();
     getBids();
   }, []);
-  
+
+  function attachAuctionsToBids(data) {
+    return data;
+  }
+
   return (
     <ListDiv className="auction-list">
         <h3>UserPage</h3>
@@ -78,8 +84,7 @@ const UserPage = props => {
       <h3>My Bids</h3>
       {bids.map(bid => (
         <Link to={`./items/${bid.id}`} style={{ textDecoration: 'none' , color:`black`}} >
-        <h4>{bid.name}</h4>
-      <p>${bid.bidAmount}</p>
+      <p>${bid.bid_amount}</p>
         </Link>
       ))}
       </BidListDiv>

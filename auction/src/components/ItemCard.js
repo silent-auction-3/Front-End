@@ -67,6 +67,7 @@ const ItemCard = (props) => {
     var lest = moment(bing).add(props.item.num_days, 'days').format("YYYY-MM-DDTHH:mm:ss.SSSSZ");
     return lest.toString();
   };
+  
   return (
     <CardDiv className="item-card">
       <h2>{props.item.title}</h2>

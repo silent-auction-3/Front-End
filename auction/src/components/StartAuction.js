@@ -11,9 +11,12 @@ export default function StartAuction() {
       .post('https://silent-auction-backend.herokuapp.com/api/auctions/', data)
       .then(response => {
         console.log("userauctions", response.data)
+        // this.props.history.push('/user/profile')
+        
       })
       .catch(error => {
         console.error('Server Error', error.response.data);
+        
       });
     };
     console.log(errors);

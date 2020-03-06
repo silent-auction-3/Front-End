@@ -15,16 +15,26 @@ margin: auto;
 
 `
 const AuctionListDiv = styled.div`
-border:1px solid black;
 width:30%;
 text-align:center;
+border-radius:20px;
+padding:20px;
+margin-top:50px;
+
+background-color:rgba(15, 26, 36, 0.4);
+color:#eeebb0;
 `
 const BidListDiv = styled.div`
-border:1px solid black;
 width:30%;
 display:flex;
 flex-direction:column;
 align-items:center;
+border-radius:20px;
+padding:20px;
+margin-top:50px;
+
+background-color:rgba(15, 26, 36, 0.4);
+color:#eeebb0;
 `
 const ColumnDiv = styled.div`
 display:flex;

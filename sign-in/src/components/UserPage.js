@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, NavLink } from "react-router-dom";
 import ItemCard from "./ItemCard";
 import styled from "styled-components";
+import Delete from "./Delete";
 const ListDiv = styled.div`
 
 `;
@@ -85,6 +86,7 @@ const UserPage = props => {
         {items.map(item => (
         <Link to={`./items/${item.id}`} style={{ textDecoration: 'none' , color:`black`}} >
         <ItemCard key={item.id} item={item} />
+        <Delete key={item.id} item={item} />
         </Link>
       ))}
       </AuctionListDiv>
